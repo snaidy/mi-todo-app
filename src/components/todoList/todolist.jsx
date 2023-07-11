@@ -21,13 +21,27 @@ const Todolist = () => {
       completed: true
     },
   ]
-  const [todo, stateTodo] = useState(initialValue);
+  const [todo, setTodo] = useState(initialValue);
 
+  const addTodo = (task) => {
+    const newTodo = {
+      id: todo.length + 1,
+      name: task.name,
+      completed: false
+    }
+    const listOfTasks = [...todo, newTodo]
+    console.log(listOfTasks);
+    setTodo(listOfTasks)
+  }
 
+  const handleToggle = (id) => {
+    const mappedList = todo.map(item => item.id === id? {...item, completed: !item.completed}: item)
+    setTodo(mappedList)
+  }
   return (
    <div className='todolist'>
-    <FormToDo />
-    <ListTodo list= {todo}/>
+    <FormToDo addedTodo={addTodo}/>
+    <ListTodo list= {todo} toggleTodo={handleToggle}/>
    </div>
   )
 }

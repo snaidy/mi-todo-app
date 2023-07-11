@@ -3,12 +3,13 @@ import React from 'react'
 import './formToDo.scss'
 import useForm from '../hooks/useform';
 
-const FormToDo = () => {
+const FormToDo = ({addedTodo}) => {
   const [dataForm, handleChange, resetForm] = useForm({name:''});
 
   const handleSubmit = (event) =>{
     event.preventDefault();
     console.log('soy dataform',dataForm)
+    addedTodo(dataForm)
     resetForm();
   }
   return (

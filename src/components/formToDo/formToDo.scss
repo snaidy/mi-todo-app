@@ -1,9 +1,10 @@
 @import "../../variables.scss";
+@import "../../index.scss";
 
 .input {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
     & h2{
         color: $color-primary;
         margin-top: 10px;
@@ -12,6 +13,7 @@
     }
 
   .form {
+    display: flex;
     gap: 10px;
     margin-bottom: 10px;
     &__input {

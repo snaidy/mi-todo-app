@@ -9,6 +9,6 @@ const handleChange = (event) =>{
 const resetForm = () => {
     setdataForm(initialState);
 }
-return [dataForm, handleChange, resetForm];
+return [dataForm, handleChange, resetForm ];
 }
 export default useForm;
