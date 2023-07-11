@@ -1,0 +1,40 @@
+@import "../../variables.scss";
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+    & h2{
+        color: $color-primary;
+        margin-top: 10px;
+        text-align: center;
+        
+    }
+
+  .form {
+    gap: 10px;
+    margin-bottom: 10px;
+    &__input {
+      padding: 10px;
+      border: 1px solid $color-primary;
+      border-radius: 5px;
+
+      &:focus {
+        outline: none;
+        border-color: $color-secondary;
+      }
+    }
+    &__button {
+      padding: 10px 20px;
+      background-color: $color-primary;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-secondary;
+      }
+    }
+  }
+}

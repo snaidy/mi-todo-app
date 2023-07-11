@@ -1,0 +1,36 @@
+@import "../../variables.scss";
+.lista {
+  &__ol {
+    list-style-type: none;
+
+    &-li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: $color-primary;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        background-color: $color-accent;
+        border-radius: 50%;
+      }
+
+      // &.completed {
+      //   background-color: $color-secondary;
+      //   text-decoration: line-through;
+      // }
+    }
+
+    &-input {
+      margin-right: 10px;
+    }
+  }
+}
