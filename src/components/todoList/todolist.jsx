@@ -38,10 +38,21 @@ const Todolist = () => {
     const mappedList = todo.map(item => item.id === id? {...item, completed: !item.completed}: item)
     setTodo(mappedList)
   }
+
+  const deleteTodo = (id) => {
+    const deleteList = todo.filter(item => item.id !== id)
+    setTodo(deleteList)
+  }
+
+  const editTodo = (id, newName) => {
+    const editList = todo.map(item => item.id === id? {...item, name:newName }: item)
+    setTodo(editList)
+  }
+
   return (
    <div className='todolist'>
     <FormToDo addedTodo={addTodo}/>
-    <ListTodo list= {todo} toggleTodo={handleToggle}/>
+    <ListTodo list= {todo} toggleTodo={handleToggle} deleteTodo={deleteTodo} editTodo={editTodo}/>
    </div>
   )
 }
